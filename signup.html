@@ -1,0 +1,95 @@
+
+<html>
+<head>
+<title>Wanderlust Tourism: Sign up</title>
+<link rel="stylesheet" href="signupstyles.css">
+</head>
+<body>
+
+<script type="text/javascript">
+function validation()
+{
+	var a=document.inputform.name.value();
+	var c=document.inputform.username.value();
+	var em=document.inputform.email.value();
+	var phno=document.inputform.phoneno.value();
+	var atposition=x.indexOf("@");  
+	var dotposition=x.lastIndexOf(".");  
+	var phoneno = /^\d{10}$/;
+	if(a==" ")
+	{
+		alert("Please enter your name");
+		document.inputform.name.focus();
+		return false;
+	}
+	else if(!isNaN(a))
+	{
+		alert("Please enter only character");
+		document.inputform.name.select();
+		return false;
+	}
+	
+	else if(c==" ")
+	{
+		alert("Please enter your username");
+		document.inputform.username.focus();
+		return false;
+	}
+	else if(!isNaN(c))
+	{
+		alert("Please enter only character");
+		document.inputform.username.select();
+		return false;
+	}
+	else if((c.length<5)||(c.lengthy>15))
+	{
+		alert("Username must be between 5 to 15 characters");
+		document.inputform.username.select();
+		return false;
+	}
+	else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=em.length)
+	{  
+  		alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+ 		return false;  
+	}
+	else if(phno.length<10 || isNaN(phno))
+    {
+		alert("Invalid phoneno.");
+        return false;
+    }
+}
+</script>
+<center>
+<img src="E:\3952\tourism\wanderlust3.jpg" > &nbsp;
+<font color="White">
+<h1>Sign Up</h1>
+<form name="inputform" onsubmit="return validation()" >
+		<br><br>
+		Name:&nbsp;&nbsp;
+		<input type="text" name="name" placeholder="Enter Name" required>
+		<br><br>
+ 		 User name:&nbsp;&nbsp;
+		  <input type="text" name="username" placeholder="Enter Username" required>
+		<br><br>
+ 		 Phone no.:&nbsp;&nbsp;
+		  <input type="text" name="phone" placeholder="Enter Phone no." required>
+		<br><br>
+		Email:&nbsp;&nbsp;
+		  <input type="email" name="email" placeholder="Enter email id" required>
+		<br><br>
+		  User password:&nbsp;&nbsp;
+		  <input type="password" name="psw" placeholder="Enter password" required>
+		<br><br>
+		  Re-Type Password:&nbsp;&nbsp;
+		  <input type="password" name="repsw" placeholder="Re-enter password" required>
+		<br><br>
+		<input type="submit" value="Sign Up">
+		<br><br>
+</form>
+
+<h3>Already a member?</h3>
+<a href="E:\3952\tourism\login.html">Login</a>
+</font>
+</center>
+</body>
+</html>
